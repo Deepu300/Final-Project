@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GestureCAPTCHA U.S. Visa Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f7;
+      display: flex;
+      height: 100vh;
+    }
+    .left-pane {
+      width: 60%;
+      background: #03346e;
+      color: white;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    .left-pane h1 {
+      font-size: 2rem;
+    }
+    .left-pane p, .left-pane li {
+      margin-bottom: 0.5rem;
+    }
+    .left-pane ul {
+      padding-left: 1.2rem;
+    }
+    .right-pane {
+      width: 40%;
+      padding: 2rem;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #0078d4;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005a9e;
+    }
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .modal-buttons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-around;
+    }
+    .modal-buttons button {
+      flex: 1;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-pane">
+    <h1>Apply for a U.S. Visa</h1><br/>
+    <p><strong>Terms and Conditions:</strong></p><br/>
+    <ul>
+      <li>All fees paid are non-refundable.</li>
+      <li>A visa does not guarantee entry into the U.S.</li>
+      <li>A visa allows a foreign citizen coming from abroad, to travel to the United States port-of-entry and request permission to enter the U.S.</li>
+      <li>Permission to enter can only be given by a Department of Homeland Security (DHS), Customs and Border Protection (CBP) official.</li>
+      <li>You may not enter the U.S. with an expired visa. The visa must be valid at the time you enter the U.S.</li>
+    </ul><br/><br/>
+    <p><strong>New Users on this portal:</strong></p>
+    <p>If you are logging in here for the first time to schedule a visa interview or enter your visa delivery address, you will need to register and create a profile online. In order to register, please click on <em>Sign up Now</em> Link at the bottom and follow the instruction.</p><br/>
+    <p><strong>Registered Users on this portal:</strong></p>
+    <p>If you are logging in here for the first time to schedule a visa interview or enter your visa delivery address, you will need to...</p>
+  </div>
+  <div class="right-pane">
+    <h2>User Details</h2>
+    <div class="form-group">
+      <label for="username">Username*</label>
+      <input type="text" id="username" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email*</label>
+      <input type="email" id="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">New Password*</label>
+      <input type="password" id="password" required />
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm New Password*</label>
+      <input type="password" id="confirmPassword" required />
+    </div>
+    <button onclick="showModal()">Start Gesture Check</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="modal-content">
+      <h2>🔒 Security Check</h2>
+      <p>
+        GestureCAPTCHA does not store your image. It verifies your gesture
+        locally, ensuring fast and secure access.
+      </p>
+      <div class="modal-buttons">
+        <button onclick="startGestureCheck()">Agree</button>
+        <button onclick="hideModal()">Try another method</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gesture Script -->
+  <script>
+    function showModal() {
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function hideModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    function startGestureCheck() {
+      hideModal();
+      window.location.href = 'gestureupdate.html'; // Replace with actual page
+    }
+  </script>
+</body>
+</html>
